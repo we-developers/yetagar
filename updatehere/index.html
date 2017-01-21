@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Creating Sticky Navigation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel Norton">
+    <!-- Styles -->
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,500,700,800' rel='stylesheet' type='text/css'>
+
+
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+ <meta name="robots" content="noindex,follow" />
+
+<style>
+
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+html,button,input,select,textarea {
+    color:#222
+}
+
+html {
+    font-size:1em;
+    line-height:1.4
+}
+
+::-moz-selection {
+    background:#b3d4fc;
+    text-shadow:none
+}
+
+::selection {
+    background:#b3d4fc;
+    text-shadow:none
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #ccc;
+    margin:1em 0;
+    padding:0
+}
+
+audio,canvas,img,video {
+    vertical-align:middle
+}
+
+fieldset {
+    border:0;
+    margin:0;
+    padding:0
+}
+
+textarea {
+    resize:vertical
+}
+
+/***********************************************************************************************/
+/* GENERAL */
+/***********************************************************************************************/
+body {
+    font:16px/1.5 'Raleway',Arial,sans-serif;
+    color:#fff;
+    margin:0;
+    padding:0
+}
+
+h1 {
+    font-size:50px;
+    font-weight:300;
+    text-align:center;
+    font-weight:700
+}
+
+span {
+    color:#27ae60;
+    font-weight:700
+}
+
+h2 {
+    font-size:35px;
+    text-align:left;
+    margin-left:-20px
+}
+
+nav.demo-nav {
+    width:350px;
+    margin:0 auto;
+    display:block
+}
+
+nav.demo-nav a {
+    font-size:19px;
+    display:inline-block;
+    text-align:center;
+    font-family:'Lato',sans-serif;
+    color:#27ae60;
+    font-weight:400;
+    padding:5px 15px;
+    text-transform:uppercase;
+    border-radius:2px;
+    letter-spacing:1px;
+    text-decoration:none;
+    margin-right:10px;
+    border:2px solid #ecf0f1;
+    border-radius:none
+}
+
+nav a.active,nav a:hover {
+    background:#ecf0f1;
+    color:#27ae60
+}
+
+/***********************************************************************************************/
+/* HEADER AND NAV */
+/***********************************************************************************************/
+header {
+    height:250px;
+    background:#2ecc71;
+    padding:23px 0
+}
+
+nav.main-nav {
+    background:#fff;
+    height:60px;
+    border-bottom:1px solid #dadada;
+    text-align: center;
+}
+
+nav.main-nav a {
+    font-family:'Lato',sans-serif;
+    font-size:20px;
+    text-decoration:none;
+    display:inline-block;
+    padding:15px 19px;
+    color:#27ae60;
+
+}
+
+
+nav.main-nav.stickytop {
+    position:fixed;
+    top:0;
+    width: 100%; 
+}
+
+.container {
+    display: inline;
+    margin:0 auto;
+  
+}
+
+/***********************************************************************************************/
+/* CONTENT */
+/***********************************************************************************************/
+.content {
+    color:#222;
+    padding:50px;
+    -webkit-column-count:3;
+/* Chrome, Safari, Opera */
+    -moz-column-count:3;
+/* Firefox */
+    column-count:3;
+    -webkit-column-gap:40;
+    column-gap:40px;
+}
+
+.content h2 {
+    margin:0;
+}
+
+/***********************************************************************************************/
+/* RESPONSIVE */
+/***********************************************************************************************/
+
+@media all and (min-width: 360px) and (max-width: 480px) { 
+    header {
+        padding:5px 0 55px;
+    }
+    
+    nav.main-nav a {
+        font-size:17px;
+    }
+    
+    nav.main-nav {
+        height:55px;
+    }
+    
+    .container {
+        margin:0 auto;
+        width:50%;
+        
+    }
+    
+    .content {
+        -webkit-column-count:1;
+        /* Chrome, Safari, Opera */
+        -moz-column-count:1;
+        /* Firefox */
+        column-count:1;
+    }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+    header {
+        padding:5px 0 55px;
+    }
+    
+    nav.main-nav a {
+        font-size:17px;
+    }
+    
+    nav.main-nav {
+        height:55px;
+    }
+    
+    .container {
+        width:92%;
+    }
+    
+    .content {
+        -webkit-column-count:1;
+        /* Chrome, Safari, Opera */
+        -moz-column-count:1;
+        /* Firefox */
+        column-count:1
+    }
+}
+
+</style>
+
+
+</head>
+<body>
+<header>
+<h1>Creating <span>Sticky</span> Navigation</h1>
+    <nav class="demo-nav">       
+        <a href="index.html" class="active">Using jQuery</a>
+        <a href="index2.html" >Using CSS</a>
+    </nav>                
+</header>
+
+
+
+
+<nav class="main-nav">
+<div class="container">
+ <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Profile</a>
+  <a href="#">Contact</a>
+  </div>
+</nav>
+
+
+<div class="content">
+<h2>Main Content Here!</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+
+</div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+$(function(){
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 290) {
+            $('nav.main-nav').addClass('stickytop');
+        }
+        else {
+            $('nav.main-nav').removeClass('stickytop');
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
